@@ -320,9 +320,9 @@
 //     MediaDevices=window.SpeechRecognitionResult;
 //   },
 OutputFormat:"text",
-  Audio: {
-   audioElement: window.SpeechRecognitionResult,
-  },
+//   Audio: {
+//    audioElement: window.SpeechRecognitionResult,
+//   },
   OutputBucketName: "OUTPUT_BUCKET_NAME"
 };
  const run = async () => {
@@ -331,12 +331,13 @@ OutputFormat:"text",
       new StartTranscriptionJobCommand(params)
     );
     // console.log("Success - put", data);
+    document.getElementById('inputText').value=data;
     return data; // For unit tests.
   } catch (err) {
     console.log("Error", err);
   }
 };
-document.getElementById('inputText').value="he";
+
         }
         function Export2Word(filename = "") {
             var preHtml =
