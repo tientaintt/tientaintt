@@ -345,7 +345,7 @@ recognition.addEventListener('kq',t=>{
     const transcript =Array.from(t.result)
     .map(kq=>kq[0])
     .map(kq => kq.transcript)
-    document.getElementById('inputText').value=transcript;  
+    document.getElementById('inputText').innerHTML=transcript;  
 })
 if(speech==true)
 {
