@@ -329,9 +329,9 @@ OutputFormat:"text",
   try {
     const data = await transcribeClient.send(
       new StartTranscriptionJobCommand(params)
-    ).map(data=>document.getElementById('inputText').value);
+    );
     // console.log("Success - put", data);
-    // document.getElementById('inputText').value=data;
+    document.getElementById('inputText').value=data;
     return data; // For unit tests.
   } catch (err) {
     console.log("Error", err);
