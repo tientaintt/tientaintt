@@ -325,8 +325,10 @@ OutputFormat:"text",
 //   },
   OutputBucketName: "OUTPUT_BUCKET_NAME"
 };
+const recognition=new SpeechRecognitionResult();
  const run = async () => {
   try {
+    recognition.start();
     const data = await transcribeClient.send(
       new StartTranscriptionJobCommand(params)
     );
