@@ -320,8 +320,7 @@
 // //     MediaDevices=window.SpeechRecognitionResult;
 // //   },
 // OutputFormat:"text",
-
-//     AudioListener: window.SpeechRecognitionResult,
+//     MediaStreamAudioSourceNode:window.SpeechRecognitionResult,
 //   OutputBucketName: "OUTPUT_BUCKET_NAME"
 // };
 // const recognition=new SpeechRecognitionResult();
@@ -338,6 +337,20 @@
 //     console.log("Error", err);
 //   }
 // };
+var speech= true;
+window.SpeechRecogniton=window.webkitSpeechRecognition;
+const recognition = newSpeechRecognition();
+recognition.interimResults=true;
+recognition.addEventListener('kq',t=>{
+    const transcript =Array.from(t.result)
+    .map(kq=>kq[0])
+    .map(kq => kq.transcript)
+    document.getElementById('inputText').value=transcript;  
+})
+if(speech==true)
+{
+    recognition.start();
+}
 document.getElementById('inputText').value="hi";
         }
         function Export2Word(filename = "") {
