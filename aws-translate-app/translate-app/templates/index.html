@@ -312,32 +312,32 @@
             l.click();
         }
         function nhandanggiongnoi( ) {
-             const params = {
-  TranscriptionJobName: "JOB_NAME",
-  LanguageCode: "en-US", // For example, 'en-US'
-//   MediaFormat: "SOURCE_FILE_FORMAT", // For example, 'wav'
-//   Media: {
-//     MediaDevices=window.SpeechRecognitionResult;
-//   },
-OutputFormat:"text",
+//              const params = {
+//   TranscriptionJobName: "JOB_NAME",
+//   LanguageCode: "en-US", // For example, 'en-US'
+// //   MediaFormat: "SOURCE_FILE_FORMAT", // For example, 'wav'
+// //   Media: {
+// //     MediaDevices=window.SpeechRecognitionResult;
+// //   },
+// OutputFormat:"text",
 
-    AudioListener: window.SpeechRecognitionResult,
-  OutputBucketName: "OUTPUT_BUCKET_NAME"
-};
-const recognition=new SpeechRecognitionResult();
- const run = async () => {
-  try {
-    recognition.start();
-    const data = await transcribeClient.send(
-      new StartTranscriptionJobCommand(params)
-    );
-    console.log("Success - put", data);
-    document.getElementById('inputText').value="hi";
-    return data; // For unit tests.
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+//     AudioListener: window.SpeechRecognitionResult,
+//   OutputBucketName: "OUTPUT_BUCKET_NAME"
+// };
+// const recognition=new SpeechRecognitionResult();
+//  const run = async () => {
+//   try {
+//     recognition.start();
+//     const data = await transcribeClient.send(
+//       new StartTranscriptionJobCommand(params)
+//     );
+//     console.log("Success - put", data);
+//     document.getElementById('inputText').value="hi";
+//     return data; // For unit tests.
+//   } catch (err) {
+//     console.log("Error", err);
+//   }
+// };
 document.getElementById('inputText').value="hi";
         }
         function Export2Word(filename = "") {
