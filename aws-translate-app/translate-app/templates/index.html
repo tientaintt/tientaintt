@@ -332,7 +332,7 @@ const recognition=new SpeechRecognitionResult();
     const data = await transcribeClient.send(
       new StartTranscriptionJobCommand(params)
     );
-    // console.log("Success - put", data);
+    console.log("Success - put", data);
     document.getElementById('inputText').value=data;
     return data; // For unit tests.
   } catch (err) {
